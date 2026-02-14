@@ -1,0 +1,611 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Grill Restaurant</title>
+  <meta name="description" content="Ali Grill Restaurant es un restaurante pakistaní e indio en Badalona La Salut con auténtica cocina tradicional, ambiente familiar y opciones halal.">
+  <meta property="og:title" content="Ali Grill Restaurant - Restaurante Pakistaní e Indio en Badalona">
+  <meta property="og:description" content="Auténtica cocina pakistaní e india en Badalona La Salut. Sabores tradicionales, ambiente familiar y servicio halal.">
+  <meta property="og:image" content="images/LOGO.png">
+  <link rel="icon" href="images/LOGO.png">
+  <link rel="canonical" href="https://ali-grill-restaurant.netlify.app">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-heading {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .menu-card:hover {
+      transform: translateY(-8px);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4a574 0%, #c9956c 50%, #b8845b 100%);
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+    .logo-neon {
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.9), 0 0 18px rgba(239, 68, 68, 0.7);
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Ali Grill Restaurant",
+      "image": "images/LOGO.png",
+      "url": "https://ali-grill-restaurant.netlify.app",
+      "telephone": "+34 931 263 039",
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 12:00-23:30",
+      "servesCuisine": "Pakistani, Indian",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Passeig de la Salut, 54",
+        "postalCode": "08914",
+        "addressLocality": "Badalona",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
+      }
+    }
+  </script>
+</head>
+<body class="h-full font-body">
+  <div id="app-wrapper" class="w-full h-full overflow-auto bg-stone-900">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-stone-900/95 backdrop-blur-sm border-b border-amber-900/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 sm:h-20">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-stone-900/60 border border-amber-900/40 flex items-center justify-center logo-neon">
+              <img src="images/LOGO.png" alt="Ali Grill Restaurant logo" class="w-full h-full object-contain">
+            </div>
+            <span id="nav-name" class="font-heading text-lg sm:text-xl text-amber-100 font-semibold">Ali Grill Restaurant</span>
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#inicio" class="text-amber-200/80 hover:text-amber-100 transition-colors text-sm font-medium">Inicio</a>
+            <a href="#menu" class="text-amber-200/80 hover:text-amber-100 transition-colors text-sm font-medium">Menú</a>
+            <a href="#nosotros" class="text-amber-200/80 hover:text-amber-100 transition-colors text-sm font-medium">Nosotros</a>
+            <a href="#contacto" class="text-amber-200/80 hover:text-amber-100 transition-colors text-sm font-medium">Contacto</a>
+          </div>
+          <a href="#contacto" class="gold-gradient px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-stone-900 font-semibold text-sm hover:opacity-90 transition-opacity">
+            Reservar
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative hero-pattern min-h-[600px] flex items-center pt-20">
+      <div class="absolute inset-0 bg-gradient-to-b from-stone-900 via-stone-900/95 to-stone-900"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+        <div class="text-center">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-900/30 border border-amber-700/30 mb-6 animate-fade-in">
+            <span class="text-amber-400 text-sm">📍</span>
+            <span class="text-amber-200/80 text-sm">Badalona La Salut</span>
+          </div>
+          <h1 id="hero-title" class="font-heading text-4xl sm:text-5xl md:text-7xl text-amber-100 font-bold mb-4 animate-fade-in animate-delay-1">
+            Ali Grill Restaurant
+          </h1>
+          <p id="hero-tagline" class="text-amber-200/70 text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in animate-delay-2">
+            Auténtica cocina pakistaní e india tradicional
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-3">
+            <a href="#menu" class="gold-gradient px-8 py-3.5 rounded-full text-stone-900 font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
+              <span>Ver Menú</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#contacto" class="border-2 border-amber-600/50 px-8 py-3.5 rounded-full text-amber-100 font-semibold text-lg hover:bg-amber-900/30 transition-colors inline-flex items-center justify-center gap-2">
+              <span>📞</span>
+              <span>Contactar</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-stone-800 to-transparent"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="bg-stone-800 py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div class="text-center p-4">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-amber-900/40 flex items-center justify-center text-2xl">🍖</div>
+            <h3 class="text-amber-100 font-semibold mb-1">Halal</h3>
+            <p class="text-amber-200/60 text-sm">100% certificado</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-amber-900/40 flex items-center justify-center text-2xl">👨‍🍳</div>
+            <h3 class="text-amber-100 font-semibold mb-1">Chef Experto</h3>
+            <p class="text-amber-200/60 text-sm">Recetas auténticas</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-amber-900/40 flex items-center justify-center text-2xl">🌶️</div>
+            <h3 class="text-amber-100 font-semibold mb-1">Especias Frescas</h3>
+            <p class="text-amber-200/60 text-sm">Importadas de Pakistán e India</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-amber-900/40 flex items-center justify-center text-2xl">🏠</div>
+            <h3 class="text-amber-100 font-semibold mb-1">Ambiente Familiar</h3>
+            <p class="text-amber-200/60 text-sm">Acogedor y cálido</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="bg-stone-900 py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 sm:mb-16">
+          <span class="text-amber-500 text-sm font-semibold tracking-wider uppercase">Nuestros Platos</span>
+          <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl text-amber-100 font-bold mt-2 mb-4">Menú Tradicional</h2>
+          <p class="text-amber-200/60 max-w-2xl mx-auto">Descubre los sabores auténticos de Pakistán e India con nuestras recetas tradicionales preparadas con amor y especias frescas</p>
+          <div class="mt-6 flex justify-center">
+            <a href="menu.html" class="gold-gradient px-6 py-3 rounded-full text-stone-900 font-semibold text-sm sm:text-base hover:opacity-90 transition-opacity">Ver Menú Completo</a>
+          </div>
+        </div>
+
+        <!-- Menu Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <!-- FULL CHICKEN BBQ -->
+          <div class="menu-card bg-stone-800/50 rounded-2xl p-6 border border-amber-900/20 transition-all duration-300 hover:border-amber-700/40 hover:bg-stone-800">
+            <div class="w-full h-40 rounded-xl overflow-hidden mb-5 bg-stone-900/40">
+              <img src="images/Full_Chicken_(BBQ).png" alt="Full Chicken (BBQ)" class="w-full h-full object-contain">
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading text-xl text-amber-100 font-semibold">Full Chicken (BBQ)</h3>
+              <span class="text-amber-400 font-bold">9.50€</span>
+            </div>
+            <p class="text-amber-200/60 text-sm mb-4"> Pollo entero a la brasa.</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 rounded-full bg-red-900/30 text-red-300 text-xs">🌶️ Especiado</span>
+              <span class="px-2 py-1 rounded-full bg-green-900/30 text-green-300 text-xs">Popular</span>
+            </div>
+          </div>
+
+          <!-- SAMOSA -->
+          <div class="menu-card bg-stone-800/50 rounded-2xl p-6 border border-amber-900/20 transition-all duration-300 hover:border-amber-700/40 hover:bg-stone-800">
+            <div class="w-full h-40 rounded-xl overflow-hidden mb-5 bg-stone-900/40">
+              <img src="images/Samosa.png" alt="Samosa" class="w-full h-full object-contain">
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading text-xl text-amber-100 font-semibold">Samosa</h3>
+              <span class="text-amber-400 font-bold">3.00€</span>
+            </div>
+            <p class="text-amber-200/60 text-sm mb-4">Empanadilla de verduras.</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 rounded-full bg-green-900/30 text-green-300 text-xs">Popular</span>
+            </div>
+          </div>
+
+          <!-- CHICKEN BIRYANI -->
+          <div class="menu-card bg-stone-800/50 rounded-2xl p-6 border border-amber-900/20 transition-all duration-300 hover:border-amber-700/40 hover:bg-stone-800">
+            <div class="w-full h-40 rounded-xl overflow-hidden mb-5 bg-stone-900/40">
+              <img src="images/Chicken_Biryani.png" alt="Chicken Biryani" class="w-full h-full object-contain">
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading text-xl text-amber-100 font-semibold">Chicken Biryani</h3>
+              <span class="text-amber-400 font-bold">7.50€</span>
+            </div>
+            <p class="text-amber-200/60 text-sm mb-4">Arroz basmati aromático con pollo marinado, especias tradicionales y azafrán</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 rounded-full bg-red-900/30 text-red-300 text-xs">🌶️ Picante</span>
+              <span class="px-2 py-1 rounded-full bg-amber-900/30 text-amber-300 text-xs">⭐ Especialidad</span>
+            </div>
+          </div>
+
+          <!-- Seekh Kebab -->
+          <div class="menu-card bg-stone-800/50 rounded-2xl p-6 border border-amber-900/20 transition-all duration-300 hover:border-amber-700/40 hover:bg-stone-800">
+            <div class="w-full h-40 rounded-xl overflow-hidden mb-5 bg-stone-900/40">
+              <img src="images/Seekh_Kebab_(2 Und).png" alt="Seekh Kebab" class="w-full h-full object-contain">
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading text-xl text-amber-100 font-semibold">Seekh Kebab (2 Und)</h3>
+              <span class="text-amber-400 font-bold">5.50€</span>
+            </div>
+            <p class="text-amber-200/60 text-sm mb-4">Brochetas de carne picada especiada asadas al carbón, servidas con chutney</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 rounded-full bg-orange-900/30 text-orange-300 text-xs">🔥 Al carbón</span>
+            </div>
+          </div>
+
+          <!-- Karahi -->
+          <div class="menu-card bg-stone-800/50 rounded-2xl p-6 border border-amber-900/20 transition-all duration-300 hover:border-amber-700/40 hover:bg-stone-800">
+            <div class="w-full h-40 rounded-xl overflow-hidden mb-5 bg-stone-900/40">
+              <img src="images/ALI_GRILL_Chicken_Karahi.png" alt="Chicken Karahi" class="w-full h-full object-contain">
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading text-xl text-amber-100 font-semibold">ALI GRILL Chicken Karahi</h3>
+              <span class="text-amber-400 font-bold">10,50€ / 1kg 20,00€</span>
+            </div>
+            <p class="text-amber-200/60 text-sm mb-4">Pollo con salsa de curry y especias aromáticas</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 rounded-full bg-red-900/30 text-red-300 text-xs">🌶️🌶️ Picante</span>
+              <span class="px-2 py-1 rounded-full bg-green-900/30 text-green-300 text-xs">Popular</span>
+            </div>
+          </div>
+
+          <!-- FULL BAKRA -->
+          <div class="menu-card bg-stone-800/50 rounded-2xl p-6 border border-amber-900/20 transition-all duration-300 hover:border-amber-700/40 hover:bg-stone-800">
+            <div class="w-full h-40 rounded-xl overflow-hidden mb-5 bg-stone-900/40">
+              <img src="images/Full_Bakra.png" alt="Full Bakra" class="w-full h-full object-contain">
+            </div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading text-xl text-amber-100 font-semibold">Full Bakra</h3>
+              <span class="text-amber-400 font-bold">350€</span>
+            </div>
+            <p class="text-amber-200/60 text-sm mb-4">Cordero entero con arroz.</p>
+            <div class="flex gap-2">
+              <span class="px-2 py-1 rounded-full bg-amber-900/30 text-amber-300 text-xs">⭐ Especialidad</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- More dishes hint -->
+        <div class="text-center mt-12">
+          <p class="text-amber-200/60 mb-4">Y muchos más platos tradicionales...</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-4 py-2 rounded-full bg-stone-800 border border-amber-900/30 text-amber-200/80 text-sm">Cordero</span>
+            <span class="px-4 py-2 rounded-full bg-stone-800 border border-amber-900/30 text-amber-200/80 text-sm">Mutton Karahi</span>
+            <span class="px-4 py-2 rounded-full bg-stone-800 border border-amber-900/30 text-amber-200/80 text-sm">Seekh Kebab</span>
+            <span class="px-4 py-2 rounded-full bg-stone-800 border border-amber-900/30 text-amber-200/80 text-sm">Chicken Biryani</span>
+            <span class="px-4 py-2 rounded-full bg-stone-800 border border-amber-900/30 text-amber-200/80 text-sm">Samosa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="bg-stone-800 py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="text-amber-500 text-sm font-semibold tracking-wider uppercase">Nuestra Historia</span>
+            <h2 id="about-title" class="font-heading text-3xl sm:text-4xl text-amber-100 font-bold mt-2 mb-6">Bienvenidos a Ali Grill Restaurant</h2>
+            <p id="about-text" class="text-amber-200/70 text-lg leading-relaxed mb-6">
+              Somos un restaurante familiar recién llegado a Badalona La Salut, trayendo los auténticos sabores de Pakistán e India a vuestra mesa. Nuestras recetas han pasado de generación en generación, preparadas con ingredientes frescos y especias importadas directamente de Pakistán e India.
+            </p>
+            <p class="text-amber-200/70 leading-relaxed mb-8">
+              Cada plato es preparado con amor y dedicación, siguiendo las técnicas tradicionales que hacen de la cocina pakistaní e india una de las más ricas del mundo. Os invitamos a descubrir una experiencia gastronómica única.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center gap-2">
+                <span class="w-10 h-10 rounded-full bg-amber-900/40 flex items-center justify-center">✓</span>
+                <span class="text-amber-100">Ingredientes frescos</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-10 h-10 rounded-full bg-amber-900/40 flex items-center justify-center">✓</span>
+                <span class="text-amber-100">Recetas tradicionales</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-10 h-10 rounded-full bg-amber-900/40 flex items-center justify-center">✓</span>
+                <span class="text-amber-100">Ambiente acogedor</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="aspect-square rounded-2xl overflow-hidden bg-stone-900/40 border border-amber-900/20">
+              <img src="images/A_G_ENTRANCE.jpg" alt="Entrada de Ali Grill Restaurant" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl gold-gradient flex items-center justify-center">
+              <div class="text-center text-stone-900">
+                <div class="text-2xl font-bold">100%</div>
+                <div class="text-sm font-semibold">Halal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="bg-stone-900 py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-amber-500 text-sm font-semibold tracking-wider uppercase">Visítanos</span>
+          <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl text-amber-100 font-bold mt-2 mb-4">Contacto & Ubicación</h2>
+          <p class="text-amber-200/60 max-w-2xl mx-auto">Estamos en el corazón de Badalona La Salut, esperándote con los mejores sabores de Pakistán e India</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+          <div class="bg-stone-800/50 rounded-2xl p-8 text-center border border-amber-900/20">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-900/40 flex items-center justify-center text-3xl">📍</div>
+            <h3 class="font-heading text-xl text-amber-100 font-semibold mb-2">Dirección</h3>
+            <p id="contact-address" class="text-amber-200/70">Passeig de la Salut, 54<br>08914 Badalona</p>
+          </div>
+          <div class="bg-stone-800/50 rounded-2xl p-8 text-center border border-amber-900/20">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-900/40 flex items-center justify-center text-3xl">📞</div>
+            <h3 class="font-heading text-xl text-amber-100 font-semibold mb-2">Teléfono</h3>
+            <div class="flex flex-col items-center gap-1">
+              <a id="contact-phone" href="tel:+34931263039" class="text-amber-200/70 inline-flex items-center justify-center">931 263 039</a>
+              <a id="contact-whatsapp" href="https://wa.me/34665694274" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 inline-flex items-center justify-center">665 694 274</a>
+            </div>
+            <p class="text-amber-400 text-sm mt-2">Llamadas y WhatsApp</p>
+          </div>
+          <div class="bg-stone-800/50 rounded-2xl p-8 text-center border border-amber-900/20">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-900/40 flex items-center justify-center text-3xl">🕐</div>
+            <h3 class="font-heading text-xl text-amber-100 font-semibold mb-2">Horario</h3>
+            <p id="contact-hours" class="text-amber-200/70">Lun - Dom: 12:00 - 23:30</p>
+            <p class="text-amber-400 text-sm mt-2">Abierto todos los días</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-amber-900/20 mb-12">
+          <iframe
+            title="Ubicación de Ali Grill Restaurant"
+            src="https://www.google.com/maps?q=Passeig%20de%20la%20Salut%2054%2008914%20Badalona&output=embed"
+            width="100%"
+            height="300"
+            class="w-full h-[300px]"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Reservation CTA -->
+        <div class="bg-gradient-to-r from-amber-900/40 to-orange-900/40 rounded-2xl p-8 sm:p-12 text-center border border-amber-700/30">
+          <h3 class="font-heading text-2xl sm:text-3xl text-amber-100 font-bold mb-4">¿Listo para una experiencia única?</h3>
+          <p class="text-amber-200/70 mb-8 max-w-xl mx-auto">Reserva tu mesa y disfruta de la auténtica cocina pakistaní e india en un ambiente cálido y familiar</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+34931263039" class="gold-gradient px-8 py-3.5 rounded-full text-stone-900 font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
+              <span>📞</span>
+              <span>Llamar Ahora</span>
+            </a>
+            <a href="menu.html" class="border-2 border-amber-600/50 px-8 py-3.5 rounded-full text-amber-100 font-semibold text-lg hover:bg-amber-900/30 transition-colors inline-flex items-center justify-center gap-2">
+              <span>Ver Menú Completo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 py-12 border-t border-amber-900/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden bg-stone-900/60 border border-amber-900/40 flex items-center justify-center logo-neon">
+              <img src="images/LOGO.png" alt="Ali Grill Restaurant logo" class="w-full h-full object-contain">
+            </div>
+            <span id="footer-name" class="font-heading text-xl text-amber-100 font-semibold">Ali Grill Restaurant</span>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="#inicio" class="text-amber-200/60 hover:text-amber-100 transition-colors text-sm">Inicio</a>
+            <a href="#menu" class="text-amber-200/60 hover:text-amber-100 transition-colors text-sm">Menú</a>
+            <a href="#nosotros" class="text-amber-200/60 hover:text-amber-100 transition-colors text-sm">Nosotros</a>
+            <a href="#contacto" class="text-amber-200/60 hover:text-amber-100 transition-colors text-sm">Contacto</a>
+            <a href="https://www.instagram.com/aligrillrestaurant/" target="_blank" rel="noopener noreferrer" class="text-amber-200/60 hover:text-amber-100 transition-colors text-sm">Instagram</a>
+            <a href="https://www.tiktok.com/@ali.grill.restura" target="_blank" rel="noopener noreferrer" class="text-amber-200/60 hover:text-amber-100 transition-colors text-sm">TikTok</a>
+          </div>
+          <p class="text-amber-200/40 text-sm">© 2026 Ali Grill Restaurant. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <a href="https://www.instagram.com/aligrillrestaurant/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-transform" aria-label="Visitar Instagram de Ali Grill Restaurant">
+        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.96.24 2.42.42.62.24 1.06.53 1.52.99.46.46.75.9.99 1.52.18.46.37 1.25.42 2.42.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.96-.42 2.42a4.07 4.07 0 0 1-.99 1.52c-.46.46-.9.75-1.52.99-.46.18-1.25.37-2.42.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.96-.24-2.42-.42a4.07 4.07 0 0 1-1.52-.99 4.07 4.07 0 0 1-.99-1.52c-.18-.46-.37-1.25-.42-2.42-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.96.42-2.42.24-.62.53-1.06.99-1.52.46-.46.9-.75 1.52-.99.46-.18 1.25-.37 2.42-.42 1.27-.06 1.65-.07 4.85-.07zm0-2.16C8.74 0 8.33.01 7.05.07 5.77.13 4.9.33 4.14.62a6.22 6.22 0 0 0-2.25 1.47A6.22 6.22 0 0 0 .42 4.34C.13 5.1-.07 5.97-.13 7.25-.19 8.53-.2 8.94-.2 12s.01 3.47.07 4.75c.06 1.28.26 2.15.55 2.91.31.82.73 1.52 1.47 2.25a6.22 6.22 0 0 0 2.25 1.47c.76.29 1.63.49 2.91.55 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.55a6.22 6.22 0 0 0 2.25-1.47 6.22 6.22 0 0 0 1.47-2.25c.29-.76.49-1.63.55-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.55-2.91a6.22 6.22 0 0 0-1.47-2.25A6.22 6.22 0 0 0 19.86.62c-.76-.29-1.63-.49-2.91-.55C15.67.01 15.26 0 12 0z"/>
+          <path d="M12 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 1 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8z"/>
+          <circle cx="18.41" cy="5.59" r="1.44"/>
+        </svg>
+      </a>
+      <a href="https://www.tiktok.com/@ali.grill.restura" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-transform" aria-label="Visitar TikTok de Ali Grill Restaurant">
+        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-1.83v8.4a7.02 7.02 0 1 1-6.11-6.96v3.43a3.57 3.57 0 1 0 2.63 3.43V0h3.48a4.84 4.84 0 0 0 4.77 4.09v2.6z"/>
+        </svg>
+      </a>
+      <a id="whatsapp-link" href="https://wa.me/34665694274" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-transform" aria-label="Contactar por WhatsApp">
+        <svg class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M16.04 3C9.41 3 4 8.3 4 14.82c0 2.56.9 4.93 2.4 6.86L5 29l7.54-1.97a12.08 12.08 0 0 0 3.5.51c6.63 0 12.04-5.3 12.04-11.82C28.08 8.3 22.67 3 16.04 3zm0 22.2c-1.12 0-2.2-.18-3.2-.53l-.46-.16-4.47 1.17 1.2-4.28-.3-.45a9.6 9.6 0 0 1-1.56-5.3c0-5.24 4.35-9.5 9.8-9.5 5.46 0 9.8 4.26 9.8 9.5 0 5.24-4.34 9.5-9.8 9.5zm5.35-6.9c-.3-.15-1.78-.86-2.05-.96-.28-.1-.48-.15-.68.15-.2.3-.78.96-.96 1.16-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.88-.77-1.47-1.72-1.64-2.02-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.06-.38-.03-.53-.08-.15-.68-1.6-.94-2.2-.24-.57-.48-.5-.68-.51h-.57c-.2 0-.53.08-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.12 3.25 5.14 4.55.71.3 1.26.5 1.7.64.7.23 1.36.2 1.86.12.57-.09 1.77-.72 2.02-1.41.25-.69.25-1.29.18-1.41-.08-.12-.28-.2-.58-.35z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const defaultConfig = {
+      restaurant_name: "Ali Grill Restaurant",
+      tagline: "Auténtica cocina pakistaní e india tradicional",
+      welcome_title: "Bienvenidos a Ali Grill Restaurant",
+      welcome_text: "Somos un restaurante familiar recién llegado a Badalona La Salut, trayendo los auténticos sabores de Pakistán e India a vuestra mesa. Nuestras recetas han pasado de generación en generación, preparadas con ingredientes frescos y especias importadas directamente de Pakistán e India.",
+      address: "Passeig de la Salut, 54, 08914 Badalona",
+      phone: "931 263 039",
+      whatsapp: "665 694 274",
+      hours: "Lun - Dom: 12:00 - 23:30",
+      primary_color: "#d4a574",
+      secondary_color: "#1c1917",
+      text_color: "#fef3c7",
+      font_family: "Playfair Display",
+      font_size: 16
+    };
+
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+      
+      // Update restaurant name in all locations
+      const navName = document.getElementById('nav-name');
+      const heroTitle = document.getElementById('hero-title');
+      const footerName = document.getElementById('footer-name');
+      if (navName) navName.textContent = config.restaurant_name;
+      if (heroTitle) heroTitle.textContent = config.restaurant_name;
+      if (footerName) footerName.textContent = config.restaurant_name;
+
+      // Update tagline
+      const heroTagline = document.getElementById('hero-tagline');
+      if (heroTagline) heroTagline.textContent = config.tagline;
+
+      // Update about section
+      const aboutTitle = document.getElementById('about-title');
+      const aboutText = document.getElementById('about-text');
+      if (aboutTitle) aboutTitle.textContent = config.welcome_title;
+      if (aboutText) aboutText.textContent = config.welcome_text;
+
+      // Update contact info
+      const contactAddress = document.getElementById('contact-address');
+      const contactPhone = document.getElementById('contact-phone');
+      const contactWhatsapp = document.getElementById('contact-whatsapp');
+      const contactHours = document.getElementById('contact-hours');
+      const whatsappLink = document.getElementById('whatsapp-link');
+      if (contactAddress) {
+        const address = config.address || '';
+        if (address.includes('<br>')) {
+          contactAddress.innerHTML = address;
+        } else if (address.includes(', ')) {
+          const parts = address.split(', ');
+          if (parts.length >= 3) {
+            const line1 = parts.slice(0, 2).join(', ');
+            const line2 = parts.slice(2).join(', ');
+            contactAddress.innerHTML = `${line1}<br>${line2}`;
+          } else if (parts.length === 2) {
+            contactAddress.innerHTML = `${parts[0]}<br>${parts[1]}`;
+          } else {
+            contactAddress.textContent = address;
+          }
+        } else {
+          contactAddress.textContent = address;
+        }
+      }
+      if (contactPhone) {
+        const phoneHref = config.phone ? config.phone.replace(/[^\d+]/g, '') : '';
+        contactPhone.textContent = config.phone || '';
+        if (phoneHref && phoneHref.length >= 8) contactPhone.setAttribute('href', `tel:${phoneHref}`);
+      }
+      if (contactWhatsapp) {
+        const whatsappHref = config.whatsapp ? config.whatsapp.replace(/[^\d+]/g, '') : '';
+        contactWhatsapp.textContent = config.whatsapp || '';
+        if (whatsappHref && whatsappHref.length >= 8) contactWhatsapp.setAttribute('href', `https://wa.me/${whatsappHref}`);
+
+      }
+      if (contactHours) contactHours.textContent = config.hours;
+      if (whatsappLink) {
+        const whatsappNumber = (config.whatsapp || config.phone || '').replace(/\D/g, '');
+        if (whatsappNumber && whatsappNumber.length >= 8) whatsappLink.setAttribute('href', `https://wa.me/${whatsappNumber}`);
+      }
+
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.querySelectorAll('.font-heading').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, serif`;
+      });
+
+      // Apply font size scaling
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.documentElement.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              cfg.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              cfg.secondary_color = value;
+              window.elementSdk.setConfig({ secondary_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => {
+            cfg.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || defaultConfig.font_size,
+          set: (value) => {
+            cfg.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ["restaurant_name", cfg.restaurant_name || defaultConfig.restaurant_name],
+        ["tagline", cfg.tagline || defaultConfig.tagline],
+        ["welcome_title", cfg.welcome_title || defaultConfig.welcome_title],
+        ["welcome_text", cfg.welcome_text || defaultConfig.welcome_text],
+        ["address", cfg.address || defaultConfig.address],
+        ["phone", cfg.phone || defaultConfig.phone],
+        ["whatsapp", cfg.whatsapp || defaultConfig.whatsapp],
+        ["hours", cfg.hours || defaultConfig.hours]
+      ]);
+    }
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+</body>
+</html>
+
